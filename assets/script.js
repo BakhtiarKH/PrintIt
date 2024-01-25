@@ -17,13 +17,39 @@ const slides = [
 	}
 ]
 
+let selecteur = 0
+
 const arrowleft = document.querySelector('.arrow_left')
 const arrowright = document.querySelector('.arrow_right')
+alert(document.querySelector('.dot_selected'))
 
 arrowleft.addEventListener('click', function() {
-	alert('gauche')
+
+	document.querySelector('.dot_selected').className = 'dot'+(selecteur)
+
+	if (selecteur > 0) {
+		selecteur --;
+	}
+	else {
+		selecteur = 3
+	}
+	document.querySelector('.banner-img').src = './assets/images/slideshow/' + slides[selecteur].image
+	document.querySelector('.banner-description').innerHTML = slides[selecteur].tagLine
+	document.querySelector('.dot'+selecteur).className = 'dot_selected'
 })
 
 arrowright.addEventListener('click', function() {
-		alert('droite')
+
+	document.querySelector('.dot_selected').className = 'dot'+(selecteur)
+
+	if (selecteur < 3) {
+		selecteur ++;
+	}
+	else {
+		selecteur = 0
+	}
+	document.querySelector('.banner-img').src = './assets/images/slideshow/' + slides[selecteur].image
+	document.querySelector('.banner-description').innerHTML = slides[selecteur].tagLine
+	document.querySelector('.dot'+selecteur).className = 'dot_selected'
 })
+
