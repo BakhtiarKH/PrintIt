@@ -21,7 +21,6 @@ let selecteur = 0
 
 const arrowleft = document.querySelector('.arrow_left')
 const arrowright = document.querySelector('.arrow_right')
-alert(document.querySelector('.dot_selected'))
 
 arrowleft.addEventListener('click', function() {
 
